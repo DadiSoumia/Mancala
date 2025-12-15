@@ -1,0 +1,6 @@
+Le premier joueur choisit une case de son côté du plateau et ramasse toutes les graines qui s’y trouvent 
+En se déplaçant dans le sens inverse des aiguilles d’une montre, le joueur dépose une graine dans chaque case jusqu’à ce qu’il n’ait plus de graines en main 
+Le joueur peut déposer une graine dans n’importe quelle case du plateau (y compris son propre magasin), sauf dans le magasin de l’adversaire 
+Si la dernière graine déposée tombe dans une case vide du côté du joueur, cette graine et toutes les graines de la case opposée (du côté de l’adversaire) vont au joueur et sont placées dans son magasin 
+Quand un joueur n’a plus de graines dans toutes ses cases, la partie se termine, et le joueur adverse peut ramasser toutes les graines restantes et les placer dans son magasin 
+Le joueur ayant le plus de graines dans son magasin gagne

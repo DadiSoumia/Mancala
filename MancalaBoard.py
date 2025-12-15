@@ -1,5 +1,3 @@
-
-
 class MancalaBoard:
     def __init__(self):
 
@@ -41,13 +39,19 @@ class MancalaBoard:
         return moves
     
     def doMove(self, player, pit):
-     
+        """
+        Effectue un coup.
+        
+        Args:
+            player: 1 ou 2
+            pit: lettre du pit à jouer
+        """
         if self.board[pit] == 0:
             print("Coup invalide : pit vide")
             return
 
-        seeds = self.board[pit]  # Nombre de graines à distribuer
-        self.board[pit] = 0       # On vide le pit choisi
+        seeds = self.board[pit]
+        self.board[pit] = 0
         current = pit
 
         while seeds > 0:
@@ -68,11 +72,9 @@ class MancalaBoard:
 
         if current in player_pits and self.board[current] == 1:
             opp = self.opposite[current]
-            self.board[store] += 1 + self.board[opp]  # Ajouter graine du pit et pit opposé
-            self.board[current] = 0
-            self.board[opp] = 0
+            if self.board[opp] > 0:  # Capture seulement si pit opposé non vide
+                self.board[store] += 1 + self.board[opp]
+                self.board[current] = 0
+                self.board[opp] = 0
 
-        print(f"Après le coup du joueur {player} depuis le pit {pit} :")
-        print(self.board)
 
-        

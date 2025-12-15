@@ -11,10 +11,9 @@ class Game:
     def gameOver(self):
         """
         Vérifie si la partie est terminée.
-        Si un joueur n’a plus de graines, ramasse toutes celles de l’autre joueur
+        Si un joueur n'a plus de graines, ramasse toutes celles de l'autre joueur
         et les place dans son store.
         """
-
         board = self.state.board
 
         # Vérifier si tous les pits de player1 ou player2 sont vides
@@ -51,27 +50,25 @@ class Game:
         else:
             return "Draw", store1, store2
         
-        
     def evaluate(self):
-       """
+        """
         Évalue le plateau actuel pour l'IA.
         Valeur positive = avantage ordinateur
         Valeur négative = avantage humain
-       """
-       board = self.state.board
+        """
+        board = self.state.board
 
-       # Déterminer quel store correspond à l'ordinateur et à l'humain
-       if self.playerSide["COMPUTER"] == 1:
-          computer_store = board['Store1']
-       else:
-          computer_store = board['Store2']
+        # Déterminer quel store correspond à l'ordinateur et à l'humain
+        if self.playerSide["COMPUTER"] == 1:
+            computer_store = board['Store1']
+        else:
+            computer_store = board['Store2']
 
-       if self.playerSide["HUMAN"] == 1:
-          human_store = board['Store1']
-       else:
-         human_store = board['Store2']
+        if self.playerSide["HUMAN"] == 1:
+            human_store = board['Store1']
+        else:
+            human_store = board['Store2']
 
-       # Calcul de la valeur du plateau
-       value = computer_store - human_store
-
-       return value
+        # Calcul de la valeur du plateau
+        value = computer_store - human_store
+        return value
